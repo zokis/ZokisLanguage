@@ -8,6 +8,7 @@ Hello Word!
 -----------
 
 ```
+10
 33
 100
 114
@@ -20,10 +21,10 @@ Hello Word!
 101
 72
 LEN
-18
+19
 JUMP_IF_FALSE
 C_OUT
-12
+13
 JUMP
 NOOP
 ```
