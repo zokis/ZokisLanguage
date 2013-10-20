@@ -104,6 +104,6 @@ class ZokisVM(object):
         sys.stdout.write(chr(top))
 
     def SN_OUT(self):
-        top = self.get_top()
-        s = [chr(self.get_top()) for x in range(top)]
+        top = int(self.get_top())
+        s = [chr(int(self.get_top())) for x in range(top)]
         sys.stdout.write((''.join(s))[::-1]+'\n')
