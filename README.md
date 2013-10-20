@@ -4,6 +4,32 @@ Zokis-Language
 Zokis Language is an esoteric language created for learning stacks!
 
 
+Hello Word!
+-----------
+
+```
+33
+100
+114
+111
+87
+32
+111
+108
+108
+101
+72
+LEN
+NOT
+19
+JUMP_IF_FALSE
+C_OUT
+12
+JUMP
+NOOP
+```
+
+
 running the examples
 --------------------
 
