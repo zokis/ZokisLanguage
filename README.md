@@ -20,8 +20,7 @@ Hello Word!
 101
 72
 LEN
-NOT
-19
+18
 JUMP_IF_FALSE
 C_OUT
 12
