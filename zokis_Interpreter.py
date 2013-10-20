@@ -50,14 +50,18 @@ class ZokisCode(object):
 
 class ZokisInterpreter(object):
 
-    def __init__(self, code, _map={}):
+    def __init__(self, code, _map={}, vm=ZokisVM, debug=False):
         self.__code = code
         self.map = _map
+        self.vm = vm
+        self.debug = debug
 
     def run(self):
         z_iter = iter(ZokisCode(self.__code))
-        vm = ZokisVM(z_iter)
+        vm = self.vm(z_iter)
         while True:
+            if self.debug:
+                print vm._ZokisVM__stack
             try:
                 linha = z_iter.next()
                 if '#' in linha:
