@@ -50,8 +50,9 @@ class ZokisCode(object):
 
 class ZokisInterpreter(object):
 
-    def __init__(self, code):
+    def __init__(self, code, _map={}):
         self.__code = code
+        self.map = _map
 
     def run(self):
         z_iter = iter(ZokisCode(self.__code))
@@ -69,4 +70,5 @@ class ZokisInterpreter(object):
             if code.isdigit():
                 vm.PUSH(float(code))
             elif code:
+                code = self.map.get(code, code)
                 getattr(vm, code, vm.NOOP)()
