@@ -13,14 +13,22 @@ maps = {
 }
 
 
-if __name__ == '__main__':
-    import sys
-    code = open(sys.argv[1]).read()
+def main(argv):
+    code = open(argv[0]).read()
 
-    if len(sys.argv) >= 3:
-        _map = maps[sys.argv[2]]
+    if 'debug' in argv:
+        debug = True
+        argv.remove('debug')
+    else:
+        debug = False
+
+    if len(argv) >= 2:
+        _map = maps[argv[1]]
     else:
         _map = {}
-
-    z_interpreter = ZokisInterpreter(code, _map=_map)
+    z_interpreter = ZokisInterpreter(code, _map=_map, vm=ZokisVM, debug=debug)
     z_interpreter.run()
+
+if __name__ == '__main__':
+    import sys
+    main(sys.argv[1:])
