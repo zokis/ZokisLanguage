@@ -1,0 +1,12 @@
+# Programa que recebe um numero
+# e retorna T se for Par
+# ou F se for impar
+N_IN # recebe um numero
+2 # Adiciona 2 na pilha
+MOD # Adiciona o resto da divisao de N por 2 na pilha
+11 # Adiciona o numero 11 na pilha
+JUMP_IF_FALSE # Pula para a linha que esta no Topo da pilha se o next for falso
+70 # Adiciona caractere F na Pilha
+END # Executa a ultima Linha do Programa
+84 # 11ª linha do programa, adiciona o Caractere T na pilha
+C_OUT # imprime o que esta no Topo da pilha como um caractere
