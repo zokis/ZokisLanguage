@@ -19,7 +19,16 @@ class ZokisIterable(object):
 class ZokisCode(object):
 
     def __init__(self, code):
-        self.__code = code
+        if isinstance(code, basestring):
+            self.__code = code.splitlines()
+        elif hasattr(code, 'next'):
+            self.__code = list(code)
+        else:
+            try:
+                code[0]
+            except IndexError:
+                raise IndexError("Code must contain one or more lines")
+            self.__code = code
 
     def __len__(self):
         return len(self.__code)
